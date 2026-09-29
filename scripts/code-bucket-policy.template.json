@@ -1,0 +1,1 @@
+{"Version":"2012-10-17","Statement":[{"Sid":"AllowLambdaWebFunctionCodeAccess","Effect":"Allow","Principal":{"Service":"lambda.amazonaws.com"},"Action":["s3:GetObject","s3:GetObjectVersion"],"Resource":"arn:aws:s3:::{{CODE_BUCKET}}/*","Condition":{"ArnLike":{"aws:SourceArn":"arn:aws:lambda:{{REGION}}:{{ACCOUNT}}:web-function/{{FN}}/revision/*"}}}]}
