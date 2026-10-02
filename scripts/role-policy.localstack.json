@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Logs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": [
+        "arn:aws:logs:us-east-1:000000000000:log-group:/aws/lambda/web/shortener:*",
+        "arn:aws:logs:us-east-1:000000000000:log-group:/aws/lambda/web/shortener.local:*"
+      ]
+    },
+    {
+      "Sid": "Links",
+      "Effect": "Allow",
+      "Action": ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:UpdateItem", "dynamodb:Scan"],
+      "Resource": "arn:aws:dynamodb:us-east-1:000000000000:table/short-links"
+    },
+    {
+      "Sid": "QrImages",
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject"],
+      "Resource": "arn:aws:s3:::shortener-qr/*"
+    }
+  ]
+}

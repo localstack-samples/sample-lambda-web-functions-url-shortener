@@ -62,6 +62,7 @@ scripts/
   deploy.sh           create buckets, table, role; package; upload; create-web-function; wait; smoke test
   cleanup.sh          remove everything, including S3 object versions and the two log groups
   *.template.json     bucket policy and role policy, filled in by deploy.sh
+  *.localstack.json   the same two policies with LocalStack's account id and the names used in the LocalStack walkthrough
   endpoint-config.json, trust-policy.json
 ```
 
